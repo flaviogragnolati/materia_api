@@ -22,11 +22,11 @@ class CartItem(models.Model):
 
     def __str__(self):
         """Unicode representation of CartItem."""
-        pass
+        return f"{self.product} of {self.cart}"
 
-    def save(self):
-        """Save method for CartItem."""
-        pass
+    # def save(self):
+    #     """Save method for CartItem."""
+    #     pass
 
     def get_absolute_url(self):
         """Return absolute url for CartItem."""

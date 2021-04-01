@@ -7,8 +7,12 @@ class ProductReview(models.Model):
     """Model definition for ProductReview."""
 
     # TODO: Define fields here
-    product = models.ForeignKey('Product', on_delete=models.DO_NOTHING)
-    review = models.ForeignKey('Review', on_delete=models.DO_NOTHING)
+    product = models.ForeignKey(
+        'Product', on_delete=models.DO_NOTHING, related_name='products_reviews')
+    review = models.ForeignKey(
+        'Review', on_delete=models.DO_NOTHING, related_name='reviews')
+    created_at = models.DateField(auto_now=False, auto_now_add=True)
+    updated_at = models.DateField(auto_now=True, auto_now_add=False)
 
     class Meta:
         """Meta definition for ProductReview."""
@@ -18,11 +22,11 @@ class ProductReview(models.Model):
 
     def __str__(self):
         """Unicode representation of ProductReview."""
-        pass
+        return f"{self.product}"
 
-    def save(self):
-        """Save method for ProductReview."""
-        pass
+    # def save(self):
+    #     """Save method for ProductReview."""
+    #     pass
 
     def get_absolute_url(self):
         """Return absolute url for ProductReview."""

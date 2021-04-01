@@ -21,11 +21,11 @@ class Address(models.Model):
 
     def __str__(self):
         """Unicode representation of Address."""
-        pass
+        return f"{self.user}: {self.address} - {self.zipcode} - {self.city}"
 
-    def save(self):
-        """Save method for Address."""
-        pass
+    # def save(self):
+    #     """Save method for Address."""
+    #     pass
 
     def get_absolute_url(self):
         """Return absolute url for Address."""

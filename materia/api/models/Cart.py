@@ -16,11 +16,11 @@ class Cart(models.Model):
 
     def __str__(self):
         """Unicode representation of Cart."""
-        pass
+        return self.user
 
-    def save(self):
-        """Save method for Cart."""
-        pass
+    # def save(self):
+    #     """Save method for Cart."""
+    #     pass
 
     def get_absolute_url(self):
         """Return absolute url for Cart."""

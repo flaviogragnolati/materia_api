@@ -20,9 +20,9 @@ class OrderItem(models.Model):
         """Unicode representation of OrderItem."""
         pass
 
-    def save(self):
-        """Save method for OrderItem."""
-        pass
+    # def save(self):
+    #     """Save method for OrderItem."""
+    #     pass
 
     def get_absolute_url(self):
         """Return absolute url for OrderItem."""

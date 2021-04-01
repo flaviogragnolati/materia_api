@@ -15,6 +15,7 @@ class Order(models.Model):
         RETURNED = 6, _('Returned from user')
 
     # TODO: Define fields here
+    order_num = models.PositiveIntegerField()
     total = models.SmallIntegerField()
     sub_total = models.SmallIntegerField()
     grand_total = models.SmallIntegerField()
@@ -32,11 +33,11 @@ class Order(models.Model):
 
     def __str__(self):
         """Unicode representation of Order."""
-        pass
+        return self.order_num
 
-    def save(self):
-        """Save method for Order."""
-        pass
+    # def save(self):
+    #     """Save method for Order."""
+    #     pass
 
     def get_absolute_url(self):
         """Return absolute url for Order."""

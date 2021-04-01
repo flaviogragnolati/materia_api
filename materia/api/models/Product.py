@@ -7,6 +7,7 @@ class Product(models.Model):
 
     # TODO: Define fields here
     name = models.CharField("Product's name", max_length=50)
+    code = models.PositiveIntegerField()
     description = models.TextField()
     slug = models.SlugField()
     stock = models.PositiveSmallIntegerField()
@@ -15,8 +16,10 @@ class Product(models.Model):
     live = models.BooleanField()
     created_at = models.DateField(auto_now=False, auto_now_add=True)
     updated_at = models.DateField(auto_now=True, auto_now_add=False)
-    review = models.ManyToManyField(
-        'Review', through='ProductReview', related_name='review_id')
+    reviews = models.ManyToManyField(
+        'Review', through='ProductReview')
+    categories = models.ManyToManyField(
+        'Category', through='ProductCategory')
 
     class Meta:
         """Meta definition for Product."""
@@ -26,11 +29,11 @@ class Product(models.Model):
 
     def __str__(self):
         """Unicode representation of Product."""
-        pass
+        return self.name
 
-    def save(self):
-        """Save method for Product."""
-        pass
+    # def save(self):
+    #     """Save method for Product."""
+    #     pass
 
     def get_absolute_url(self):
         """Return absolute url for Product."""

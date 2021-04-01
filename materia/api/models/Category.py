@@ -7,6 +7,8 @@ class Category(models.Model):
     # TODO: Define fields here
     name = models.CharField(max_length=50)
     description = models.TextField()
+    products = models.ManyToManyField(
+        'Product', through='ProductCategory')
 
     class Meta:
         """Meta definition for Category."""
@@ -16,11 +18,11 @@ class Category(models.Model):
 
     def __str__(self):
         """Unicode representation of Category."""
-        pass
+        return self.name
 
-    def save(self):
-        """Save method for Category."""
-        pass
+    # def save(self):
+    #     """Save method for Category."""
+    #     pass
 
     def get_absolute_url(self):
         """Return absolute url for Category."""

@@ -10,8 +10,8 @@ class Review(models.Model):
     user = models.ForeignKey(User, on_delete=models.DO_NOTHING)
     score = models.SmallIntegerField()
     comment = models.TextField()
-    product = models.ManyToManyField(
-        'Product', through='ProductReview', related_name='product_id')
+    products = models.ManyToManyField(
+        'Product', through='ProductReview')
 
     class Meta:
         """Meta definition for Review."""
@@ -21,11 +21,11 @@ class Review(models.Model):
 
     def __str__(self):
         """Unicode representation of Review."""
-        pass
+        return f"{self.user} - {self.products}: {self.score}"
 
-    def save(self):
-        """Save method for Review."""
-        pass
+    # def save(self):
+    #     """Save method for Review."""
+    #     pass
 
     def get_absolute_url(self):
         """Return absolute url for Review."""

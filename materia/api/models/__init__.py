@@ -5,6 +5,7 @@ from .Category import Category
 from .Order import Order
 from .OrderItem import OrderItem
 from .Product import Product
+from .ProductCategory import ProductCategory
 from .ProductReview import ProductReview
 from .Review import Review
 from .Transaction import Transaction
