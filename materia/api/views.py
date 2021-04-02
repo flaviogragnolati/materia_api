@@ -1,8 +1,8 @@
 from django.shortcuts import render
 from rest_framework import viewsets
 
-from .models import Address, Cart, CartItem, Category, Order, OrderItem, Product, ProductCategory, ProductReview, Review, Transaction, User
-from .serializers import AddressSerializer, CartSerializer, CartItemSerializer, CategorySerializer, OrderSerializer, OrderItemSerializer, ProductSerializer, ProductCategorySerializer, ProductReviewSerializer, ReviewSerializer, TransactionSerializer, UserSerializer
+from . import models
+from . import serializers
 
 """
     API endpoints that allows the models to be viewed or edited.
@@ -10,60 +10,60 @@ from .serializers import AddressSerializer, CartSerializer, CartItemSerializer, 
 
 
 class AddressViewSet(viewsets.ModelViewSet):
-    queryset = Address.objects.all()
-    serializer_class = AddressSerializer
+    queryset = models.Address.objects.all()
+    serializer_class = serializers.AddressSerializer
 
 
 class CartViewSet(viewsets.ModelViewSet):
-    queryset = Cart.objects.all()
-    serializer_class = CartSerializer
+    queryset = models.Cart.objects.all()
+    serializer_class = serializers.CartSerializer
 
 
 class CartItemViewSet(viewsets.ModelViewSet):
-    queryset = CartItem.objects.all()
-    serializer_class = CartItemSerializer
+    queryset = models.CartItem.objects.all()
+    serializer_class = serializers.CartItemSerializer
 
 
 class CategoryViewSet(viewsets.ModelViewSet):
-    queryset = Category.objects.all()
-    serializer_class = CategorySerializer
+    queryset = models.Category.objects.all()
+    serializer_class = serializers.CategorySerializer
 
 
 class OrderViewSet(viewsets.ModelViewSet):
-    queryset = Order.objects.all()
-    serializer_class = OrderSerializer
+    queryset = models.Order.objects.all()
+    serializer_class = serializers.OrderSerializer
 
 
 class OrderItemViewSet(viewsets.ModelViewSet):
-    queryset = OrderItem.objects.all()
-    serializer_class = OrderItemSerializer
+    queryset = models.OrderItem.objects.all()
+    serializer_class = serializers.OrderItemSerializer
 
 
 class ProductViewSet(viewsets.ModelViewSet):
-    queryset = Product.objects.all()
-    serializer_class = ProductSerializer
+    queryset = models.Product.objects.all()
+    serializer_class = serializers.ProductSerializer
 
 
 class ProductCategoryViewSet(viewsets.ModelViewSet):
-    queryset = ProductCategory.objects.all()
-    serializer_class = ProductCategorySerializer
+    queryset = models.ProductCategory.objects.all()
+    serializer_class = serializers.ProductCategorySerializer
 
 
 class ProductReviewViewSet(viewsets.ModelViewSet):
-    queryset = ProductReview.objects.all()
-    serializer_class = ProductReviewSerializer
+    queryset = models.ProductReview.objects.all()
+    serializer_class = serializers.ProductReviewSerializer
 
 
 class ReviewViewSet(viewsets.ModelViewSet):
-    queryset = Review.objects.all()
-    serializer_class = ReviewSerializer
+    queryset = models.Review.objects.all()
+    serializer_class = serializers.ReviewSerializer
 
 
 class TransactionViewSet(viewsets.ModelViewSet):
-    queryset = Transaction.objects.all()
-    serializer_class = TransactionSerializer
+    queryset = models.Transaction.objects.all()
+    serializer_class = serializers.TransactionSerializer
 
 
 class UserViewSet(viewsets.ModelViewSet):
-    queryset = User.objects.all()
-    serializer_class = UserSerializer
+    queryset = models.User.objects.all()
+    serializer_class = serializers.UserSerializer
